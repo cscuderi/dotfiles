@@ -1,8 +1,12 @@
-# Paul's dotfiles
+# Dotfiles
 
-* I maintain this repo as *my* dotfiles, but I'm keenly aware people are using it for theirs.
-* You're quite welcome to make suggestions, however I may decline if it's not of personal value to me.
-* If you're starting off consider forking [mathias](https://github.com/mathiasbynens/dotfiles/) or [alrra](https://github.com/alrra/dotfiles/). paulmillr and gf3 also have great setups
+Based off of Paul Irish's great dotfiles, these are tweaked to my liking. You can check his out [here](https://github.com/paulirish/dotfiles).
+
+## Paul's notes:
+
+### Syntax highlighting for these files
+
+If you edit this stuff, install [Dotfiles Syntax Highlighting](https://github.com/mattbanks/dotfiles-syntax-highlighting-st2) via [Package Control](http://wbond.net/sublime_packages/package_control)
 
 ## Setup
 #### installing & using
@@ -12,30 +16,15 @@
 * read and run parts of `setup-a-new-machine.sh`
 * read and run `symlink-setup.sh`
   * git config needs attention, read the notes.
-* use it. yay!
-
-#### maintenance
-
-* commit/push changes you want.
-* you can also hypothetically cherry-pick commits from me and mathias and our fork ecosystem.
-
-
-
-## my favorite parts.
-
-### [`.aliases`](https://github.com/paulirish/dotfiles/blob/master/.aliases) and [`.functions`](https://github.com/paulirish/dotfiles/blob/master/.functions)
-
-So many goodies.
+* use it
 
 ### The "readline config" (`.inputrc`)
 Basically it makes typing into the prompt amazing.
 
-* tab like crazy for autocompletion that doesnt suck. tab all the things. srsly.
+* tab like crazy for autocompletion that doesnt suck.
 * no more <tab><tab> that says "Display all 1745 possibilities? (y or n)" YAY
 * type `cat <uparrow>` to see your previous `cat`s and use them.
 * case insensitivity.
-* tab all the livelong day.
-
 
 
 ### Moving around in folders (`z`, `...`, `cdf`)
@@ -52,7 +41,7 @@ Lastly, I use `open .` to open Finder from this path. (That's just available nor
 
 
 
-## overview of files
+## Overview of files
 
 ####  Automatic config
 * `.sift.conf` - sift (faster than grep, ack, ag)
@@ -74,7 +63,7 @@ Lastly, I use `open .` to open Finder from this path. (That's just available nor
 * `.osx` - run on a fresh osx setup
 * `brew.sh` & `brew-cask.sh` - homebrew initialization
 
-#### git, brah
+#### git
 * `.git`
 * `.gitattributes`
 * `.gitconfig`
@@ -106,7 +95,7 @@ export PATH
 
 ### Sensible OS X defaults
 
-Mathias's repo is the canonical for this, but you should probably run his or mine after reviewing it.
+You should probably run this after reviewing it.
 
 ```bash
 ./.osx
@@ -116,6 +105,4 @@ Mathias's repo is the canonical for this, but you should probably run his or min
 
 One-off binaries that aren't via an npm global or homebrew. [git open](https://github.com/paulirish/git-open), [wifi-password](https://github.com/rauchg/wifi-password), [coloredlogcat](https://developer.sinnerschrader-mobile.com/colored-logcat-reloaded/507/), [git-overwritten](https://github.com/mislav/dotfiles/blob/master/bin/git-overwritten), and `subl` for Sublime Text.
 
-### Syntax highlighting for these files
 
-If you edit this stuff, install [Dotfiles Syntax Highlighting](https://github.com/mattbanks/dotfiles-syntax-highlighting-st2) via [Package Control](http://wbond.net/sublime_packages/package_control)
