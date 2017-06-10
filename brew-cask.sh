@@ -1,52 +1,53 @@
 #!/bin/bash
 
-
-# to maintain cask .... 
-#     brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup` 
-
+# to maintain cask ....
+#     brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup`
 
 # Install native apps
-
+echo "Installing native apps..."
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
-# daily
-brew cask install spectacle
-brew cask install dropbox
-brew cask install gyazo
-brew cask install onepassword
-brew cask install rescuetime
-brew cask install flux
+# Frequently used apps
+echo "Installing frequently used apps..."
+brew cask install spectacle                                    # Window manager
+brew cask install dropbox                                      # File syncing
+brew cask install google-drive                                 # File syncing
+brew cask install gyazo                                        # Screenshot/gifs
+brew cask install onepassword                                  # Password manager
+brew cask install flux                                         # Blue light manager
 
-# dev
-brew cask install iterm2
-brew cask install sublime-text
-brew cask install imagealpha
-brew cask install imageoptim
+# Dev apps
+echo "Installing dev apps..."
+brew cask install iterm2                                       # Great terminal
+brew cask install sublime-text                                 # Text editor
+brew cask install imagealpha                                   # Image optimizer
+brew cask install imageoptim                                   # Image optimizer
+brew cask install java                                         # The beast
+brew cask install virtualbox                                   # For VM's
 
-# fun
-brew cask install limechat
-brew cask install miro-video-converter
-brew cask install horndis               # usb tethering
+# Productivity
+echo "Installing productivity apps..."
+brew cask install slack                                        # Chat app
+brew cask install alfred                                       # App launcher
+brew cask install transmit                                     # FTP
+brew cask install evernote                                     # Note taking
 
-# browsers
-brew cask install google-chrome-canary
-brew cask install firefox-nightly
-brew cask install webkit-nightly
-brew cask install chromium
-brew cask install torbrowser
+# Browsers
+echo "Installing browsers..."
+brew cask install google-chrome                                # Browser of choice
+brew cask install google-chrome-canary                         # Chrome on the edge
+brew cask install firefox                                      # Other browser
+brew cask install torbrowser                                   # Secure browsing
 
-# less often
-brew cask install disk-inventory-x
-brew cask install screenflow4 # 4 specifically not 5.
-brew cask install vlc
-brew cask install gpgtools
-brew cask install licecap
-brew cask install utorrent
+# Other apps
+echo "Installing a few more apps..."
+brew cask install disk-inventory-x                             # Find big junk files on your HDD
+brew cask install vlc                                          # Plays any video/media
+brew cask install google-play-music-desktop-player             # Music streaming service
+brew cask install licecap                                      # High performance gif maker
 
-
-# Not on cask but I want regardless.
-
-# 3Hub   https://itunes.apple.com/us/app/3hub/id427515976?mt=12 
-# File Multi Tool 5
-# Phosphor
+# Cleanup
+echo "Cleaning up"
+brew cleanup --force
+rm -f -r /Library/Caches/Homebrew/*
