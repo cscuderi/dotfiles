@@ -1,10 +1,9 @@
-
-# working files
+# Working files
 .vim/viminfo
 .vim/swaps/*
 .vim/undo
 
-# git credential file
+# Git credential file
 .gitconfig.local
 
 # Folder view configuration files
@@ -19,9 +18,5 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 
-# Compiled Python files
+# Compiled files
 *.pyc
-
-# fish shell
-fishd.*
-.config/fish/fish_history

@@ -13,17 +13,14 @@
 
 	reup = rebase-update
 
-
-
-
 [color]
-	ui = always
+	ui = true
 
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/Google\\ Drive/Apps/Git/.gitignore_global
 	attributesfile = ~/.gitattributes
-	# insanely beautiful diffs
 	pager = diff-highlight | diff-so-fancy | less -r
+	autocrlf = input
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -55,7 +52,7 @@
 	insteadOf = "git://github.com"
 	pushInsteadOf = "github:"
 	pushInsteadOf = "git://github.com/"
-    pushInsteadOf = "https://github.com/"
+	pushInsteadOf = "https://github.com/"
 [url "git@gist.github.com:"]
 	insteadOf = "gst:"
 	pushInsteadOf = "gist:"
@@ -67,7 +64,7 @@
 # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
 
 [url "git@github.com:paulirish/"]
-  insteadOf = "git://github.com/paulirish/"
+	insteadOf = "git://github.com/paulirish/"
 [help]
 	autocorrect = 1
 
@@ -75,14 +72,15 @@
 [push]
 	default = current
 
-
-
 [include]
-  # For username / github token / etc
-  path = ~/.gitconfig.local
+	# For username / github token / etc
+	path = ~/.gitconfig.local
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
 [init]
 	templatedir = ~/.git_template
+[user]
+	email = carlinscuderi@gmail.com
+	name = Carlin Scuderi
