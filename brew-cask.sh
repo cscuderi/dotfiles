@@ -1,12 +1,16 @@
 #!/bin/bash
 
-# to maintain cask ....
-#     brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup`
+# to maintain cask:
+# `brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup`
 
 # Install native apps
 echo "Installing native apps..."
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
+
+# Important stuff
+brew install git
 
 # Frequently used apps
 echo "Installing frequently used apps..."
@@ -20,18 +24,26 @@ brew cask install flux                                         # Blue light mana
 # Dev apps
 echo "Installing dev apps..."
 brew cask install iterm2                                       # Great terminal
+brew cask install zsh                                          # Terminal shell
 brew cask install sublime-text                                 # Text editor
 brew cask install imagealpha                                   # Image optimizer
 brew cask install imageoptim                                   # Image optimizer
 brew cask install java                                         # The beast
 brew cask install virtualbox                                   # For VM's
+brew cask install docker                                       # Software containers
+brew cask install kitematic                                    # GUI for Docker
+brew cask install dash                                         # Dev documentation
 
 # Productivity
 echo "Installing productivity apps..."
 brew cask install slack                                        # Chat app
 brew cask install alfred                                       # App launcher
+brew cask install bartender                                    # Menu bar icon management
 brew cask install transmit                                     # FTP
 brew cask install evernote                                     # Note taking
+brew cask install itsycal                                      # Simple calendar
+brew cask install the-unarchiver                               # Best archiving tool
+brew cask install amphetamine                                  # Screen sleeping tool
 
 # Browsers
 echo "Installing browsers..."
@@ -46,6 +58,7 @@ brew cask install disk-inventory-x                             # Find big junk f
 brew cask install vlc                                          # Plays any video/media
 brew cask install google-play-music-desktop-player             # Music streaming service
 brew cask install licecap                                      # High performance gif maker
+brew cask install sketch                                       # Graphic editor
 
 # Cleanup
 echo "Cleaning up"
