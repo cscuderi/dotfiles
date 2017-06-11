@@ -30,7 +30,6 @@ brew cask install virtualbox                                   # For VM's
 brew cask install docker                                       # Software containers
 brew cask install kitematic                                    # GUI for Docker
 brew cask install dash                                         # Dev documentation
-brew cask install tree                                         # See dirs graphically in Terminal
 brew cask install postman                                      # Test APIs
 
 # Productivity
@@ -45,7 +44,6 @@ brew cask install transmit                                     # FTP
 brew cask install evernote                                     # Note taking
 brew cask install itsycal                                      # Simple calendar
 brew cask install the-unarchiver                               # Best archiving tool
-brew cask install amphetamine                                  # Screen sleep manager
 brew cask install colorsnapper                                 # Colour-grabbing
 brew cask install joinme                                       # Free screensharing
 
@@ -77,3 +75,5 @@ brew cask install font-space-mono
 echo "Cleaning up"
 brew cleanup --force
 rm -f -r /Library/Caches/Homebrew/*
+echo "All done!"
+say "Brew installation is done!""
