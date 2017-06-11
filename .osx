@@ -683,7 +683,7 @@ defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
 ###############################################################################
-# Tweetbot                                                                 #
+# Tweetbot                                                                    #
 ###############################################################################
 echo "Tweaking Tweetbot..."
 
@@ -710,6 +710,19 @@ defaults write com.tapbots.TweetbotMac soundType -int 2
 
 # Image Thumbnails: Small
 # defaults write com.tapbots.TweetbotMac statusViewImageType -int 1
+
+###############################################################################
+# SSH keys                                                                    #
+###############################################################################
+
+# Will prompt you for a phrase
+ssh-keygen
+
+# Copy to clipboard
+pbcopy < ~/.ssh/id_rsa.pub
+
+echo "Ready to paste SSH public key into Bitbucket/Github"
+
 
 ###############################################################################
 # Kill affected applications                                                  #
