@@ -290,7 +290,8 @@ defaults write com.apple.finder EmptyTrashSecurely -bool true
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 # Enable the MacBook Air SuperDrive on any Mac
-sudo nvram boot-args="mbasd=1"
+# Doesn't seem to work on Sierra...
+# sudo nvram boot-args="mbasd=1"
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
@@ -487,7 +488,8 @@ defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnab
 echo "Tweaking Spotlight..."
 
 # Hide Spotlight tray-icon (and subsequent helper)
-sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
+# It appears that this no longer works post Mavericks...
+# sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
 
 # Disable Spotlight indexing for any volume that gets mounted and has not yet
 # been indexed before.
@@ -631,7 +633,7 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 # Mac App Store                                                               #
 ###############################################################################
 
-echo "Tweaking the App Store..."
+echo "Tweaking App Store..."
 
 # Enable the WebKit Developer Tools in the Mac App Store
 defaults write com.apple.appstore WebKitDeveloperExtras -bool true
@@ -708,8 +710,6 @@ defaults write com.tapbots.TweetbotMac soundType -int 2
 
 # Image Thumbnails: Small
 # defaults write com.tapbots.TweetbotMac statusViewImageType -int 1
-
-CFPreferencesAppSynchronize "com.tapbots.TweetbotMac"
 
 ###############################################################################
 # Kill affected applications                                                  #

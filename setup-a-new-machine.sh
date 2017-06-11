@@ -1,5 +1,4 @@
-# copy paste this file in bit by bit.
-# don't run it.
+# Copy paste this file in bit by bit
 echo "do not run this script in one go. hit ctrl-c NOW"
 read -n 1
 
@@ -47,8 +46,8 @@ if ! xcode-select --print-path &> /dev/null; then
 # /////////////////////////////////////////////////////////////////////
 
 # If your machine has /usr/local locked down (like Google's), you can do this to place everything in ~/.homebrew
-mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
-export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
+# mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
+# export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 
 # Install all the things
 ./brew.sh

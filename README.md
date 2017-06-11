@@ -13,9 +13,7 @@ Install [Dotfiles Syntax Highlighting](https://github.com/mattbanks/dotfiles-syn
 ### Installation
 
 1. Clone/download this repo locally (anywhere)
-1. Run `brew-cask.sh`
-1. Run `setup-a-new-machine.sh`
-1. Run `symlink-setup.sh`
+1. Copy-paste parts of `setup-a-new-machine.sh` (includes `.osx` and `symlink-setup.sh`)
 
 ## Moving around in folders (`z`, `...`, `cdf`)
 
