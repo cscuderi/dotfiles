@@ -8,9 +8,10 @@ echo "Installing essential apps..."
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
-
 brew install git
 brew install node
+brew install yarn
+brew cask install java
 
 # Frequently used apps
 echo "Installing frequently used apps..."
@@ -23,13 +24,14 @@ echo "Installing dev apps..."
 brew cask install iterm2                                       # Great terminal
 brew cask install zsh                                          # Terminal shell
 brew cask install sublime-text                                 # Text editor
-brew cask install imagealpha                                   # Image optimizer
+brew cask install imagealpha                                   # PNG optimizer
 brew cask install imageoptim                                   # Image optimizer
-brew cask install java                                         # The beast
 brew cask install virtualbox                                   # For VM's
 brew cask install docker                                       # Software containers
 brew cask install kitematic                                    # GUI for Docker
 brew cask install dash                                         # Dev documentation
+brew cask install tree                                         # See dirs graphically in Terminal
+brew cask install postman                                      # Test APIs
 
 # Productivity
 echo "Installing productivity apps..."
@@ -43,7 +45,9 @@ brew cask install transmit                                     # FTP
 brew cask install evernote                                     # Note taking
 brew cask install itsycal                                      # Simple calendar
 brew cask install the-unarchiver                               # Best archiving tool
-brew cask install amphetamine                                  # Screen sleeping tool
+brew cask install amphetamine                                  # Screen sleep manager
+brew cask install colorsnapper                                 # Colour-grabbing
+brew cask install joinme                                       # Free screensharing
 
 # Browsers
 echo "Installing browsers..."
@@ -58,6 +62,7 @@ brew cask install disk-inventory-x                             # Find big junk f
 brew cask install vlc                                          # Plays any video/media
 brew cask install google-play-music-desktop-player             # Music streaming service
 brew cask install sketch                                       # Graphic editor
+brew cask install adobe-creative-cloud                         # Adobe's app manager
 brew cask install flux                                         # Blue light manager
 
 # Fonts
