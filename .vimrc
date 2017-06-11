@@ -444,13 +444,6 @@ augroup filetype_coffee
 augroup END
 " }}}
 
-" Fish {{{
-augroup filetype_fish
-  autocmd!
-  au BufRead,BufNewFile *.fish set ft=fish
-augroup END
-" }}}
-
 " Handlebars {{{
 augroup filetype_hbs
   autocmd!
@@ -519,90 +512,6 @@ augroup END
 augroup filetype_zsh
   autocmd!
   au BufRead,BufNewFile .zsh_rc,.functions,.commonrc set ft=zsh
-augroup END
-" }}}
-
-
-" Plugin Configuration -------------------------------------------------------------
-
-" Airline.vim {{{
-augroup airline_config
-  autocmd!
-  let g:airline_powerline_fonts = 1
-  let g:airline_enable_syntastic = 1
-  let g:airline#extensions#tabline#buffer_nr_format = '%s '
-  let g:airline#extensions#tabline#buffer_nr_show = 1
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#fnamecollapse = 0
-  let g:airline#extensions#tabline#fnamemod = ':t'
-augroup END
-" }}}
-
-" CtrlP.vim {{{
-augroup ctrlp_config
-  autocmd!
-  let g:ctrlp_clear_cache_on_exit = 0 " Do not clear filenames cache, to improve CtrlP startup
-  let g:ctrlp_lazy_update = 350 " Set delay to prevent extra search
-  let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' } " Use python fuzzy matcher for better performance
-  let g:ctrlp_match_window_bottom = 0 " Show at top of window
-  let g:ctrlp_max_files = 0 " Set no file limit, we are building a big project
-  let g:ctrlp_switch_buffer = 'Et' " Jump to tab AND buffer if already open
-  let g:ctrlp_open_new_file = 'r' " Open newly created files in the current window
-  let g:ctrlp_open_multiple_files = 'ij' " Open multiple files in hidden buffers, and jump to the first one
-augroup END
-" }}}
-
-" Silver Searcher {{{
-augroup ag_config
-  autocmd!
-
-  if executable("ag")
-    " Note we extract the column as well as the file and line number
-    set grepprg=ag\ --nogroup\ --nocolor\ --column
-    set grepformat=%f:%l:%c%m
-
-    " Have the silver searcher ignore all the same things as wilgignore
-    let b:ag_command = 'ag %s -i --nocolor --nogroup'
-
-    for i in split(&wildignore, ",")
-      let i = substitute(i, '\*/\(.*\)/\*', '\1', 'g')
-      let b:ag_command = b:ag_command . ' --ignore "' . substitute(i, '\*/\(.*\)/\*', '\1', 'g') . '"'
-    endfor
-
-    let b:ag_command = b:ag_command . ' --hidden -g ""'
-    let g:ctrlp_user_command = b:ag_command
-  endif
-augroup END
-" }}}
-
-" EasyAlign.vim {{{
-augroup easy_align_config
-  autocmd!
-  vmap <Enter> <Plug>(EasyAlign) " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-  nmap <Leader>a <Plug>(EasyAlign) " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
-augroup END
-" }}}
-
-" Notes.vim {{{
-augroup notes_config
-  autocmd!
-  let g:notes_directories = ['~/Dropbox/Notes']
-augroup END
-" }}}
-
-" RainbowParenthesis.vim {{{
-augroup rainbow_parenthesis_config
-  autocmd!
-  nnoremap <leader>rp :RainbowParenthesesToggle<CR>
-augroup END
-" }}}
-
-" Syntastic.vim {{{
-augroup syntastic_config
-  autocmd!
-  let g:syntastic_error_symbol = '✗'
-  let g:syntastic_warning_symbol = '⚠'
-  let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 augroup END
 " }}}
 
