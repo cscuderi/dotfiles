@@ -12,6 +12,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
+echo "Tweaking general UI/UX..."
+
 # Disable menubar transparency
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
@@ -104,9 +106,14 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable smart dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
+# Don't show the ~/bin directory
+chflags hidden "${HOME}/bin"
+
 ###############################################################################
 # SSD-specific tweaks                                                         #
 ###############################################################################
+
+echo "Tweaking SSD..."
 
 # Disable local Time Machine snapshots
 sudo tmutil disablelocal
@@ -127,6 +134,8 @@ sudo pmset -a sms 0
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
+
+echo "Tweaking peripherals..."
 
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
@@ -177,8 +186,10 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 ###############################################################################
-# Screen                                                                      #
+# Display                                                                     #
 ###############################################################################
+
+echo "Tweaking Display..."
 
 # Save screenshots to the desktop/OS X Screenshots
 defaults write com.apple.screencapture location -string "${HOME}/Desktop/OS X Screenshots"
@@ -201,6 +212,8 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
+
+echo "Tweaking Finder..."
 
 # Finder: disable window animations and Get Info animations
 defaults write com.apple.finder DisableAllAnimations -bool true
@@ -297,6 +310,8 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
 
+echo "Tweaking Dock, Dashboard, and hot corners..."
+
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
@@ -390,6 +405,8 @@ defaults write com.apple.dock wvous-tl-modifier -int 0
 # Safari & WebKit                                                             #
 ###############################################################################
 
+echo "Tweaking Safari..."
+
 # Privacy: don’t send search queries to Apple
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
 defaults write com.apple.Safari SuppressSearchSuggestions -bool true
@@ -440,6 +457,8 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Mail                                                                        #
 ###############################################################################
 
+echo "Tweaking Mail..."
+
 # Disable send and reply animations in Mail.app
 #defaults write com.apple.mail DisableReplyAnimations -bool true
 #defaults write com.apple.mail DisableSendAnimations -bool true
@@ -464,6 +483,8 @@ defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnab
 ###############################################################################
 # Spotlight                                                                   #
 ###############################################################################
+
+echo "Tweaking Spotlight..."
 
 # Hide Spotlight tray-icon (and subsequent helper)
 sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
@@ -518,6 +539,8 @@ sudo mdutil -E / > /dev/null
 # Terminal & iTerm 2                                                          #
 ###############################################################################
 
+echo "Tweaking Terminal..."
+
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
@@ -536,6 +559,8 @@ defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 # Time Machine                                                                #
 ###############################################################################
 
+echo "Tweaking Time Machine..."
+
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
@@ -545,6 +570,8 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 ###############################################################################
 # Activity Monitor                                                            #
 ###############################################################################
+
+echo "Tweaking Activity Monitor..."
 
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
@@ -582,6 +609,8 @@ defaults write com.apple.ActivityMonitor NetworkGraphType -int 1
 # Address Book, Dashboard, Calendar, TextEdit, and Disk Utility                   #
 ###############################################################################
 
+echo "Tweaking generic Mac apps..."
+
 # Enable the debug menu in Address Book
 defaults write com.apple.addressbook ABShowDebugMenu -bool true
 
@@ -602,6 +631,8 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 # Mac App Store                                                               #
 ###############################################################################
 
+echo "Tweaking the App Store..."
+
 # Enable the WebKit Developer Tools in the Mac App Store
 defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 
@@ -611,6 +642,8 @@ defaults write com.apple.appstore ShowDebugMenu -bool true
 ###############################################################################
 # Messages                                                                    #
 ###############################################################################
+
+echo "Tweaking Apple Messages..."
 
 # Disable automatic emoji substitution (i.e. use plain text smileys)
 # defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
@@ -624,6 +657,8 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 ###############################################################################
 # Google Chrome & Google Chrome Canary                                        #
 ###############################################################################
+
+echo "Tweaking Chrome..."
 
 # Allow installing user scripts via GitHub Gist or Userscripts.org
 defaults write com.google.Chrome ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
@@ -646,44 +681,35 @@ defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
 ###############################################################################
-# GPGMail 2                                                                   #
+# Tweetbot                                                                 #
 ###############################################################################
+echo "Tweaking Tweetbot..."
 
-# Disable signing emails by default
-defaults write ~/Library/Preferences/org.gpgtools.gpgmail SignNewEmailsByDefault -bool false
+# Use absolute dates
+defaults write com.tapbots.TweetbotMac dateFormatType -int 1
 
-###############################################################################
-# Opera & Opera Developer                                                     #
-###############################################################################
+# Display both name and username
+defaults write com.tapbots.TweetbotMac displayNameType -int 3
 
-# Expand the print dialog by default
-#defaults write com.operasoftware.Opera PMPrintingExpandedStateForPrint2 -boolean true
-#defaults write com.operasoftware.OperaDeveloper PMPrintingExpandedStateForPrint2 -boolean true
+# Don't pin timeline to top
+defaults write com.tapbots.TweetbotMac streamingPinToTopEnabled -bool false
 
-###############################################################################
-# Twitter.app                                                                 #
-###############################################################################
+# Quote format: RT with comment
+defaults write com.tapbots.TweetbotMac quoteFormatType -int 1
 
-# Disable smart quotes as it’s annoying for code tweets
-defaults write com.twitter.twitter-mac AutomaticQuoteSubstitutionEnabled -bool false
+# Font size: Medium
+defaults write com.tapbots.TweetbotMac fontSize -int 13
 
-# Show the app window when clicking the menu bar icon
-defaults write com.twitter.twitter-mac MenuItemBehavior -int 1
+# Don't show status item
+# defaults write com.tapbots.TweetbotMac showStatusItem -bool false
 
-# Enable the hidden ‘Develop’ menu
-defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
+# No sounds
+defaults write com.tapbots.TweetbotMac soundType -int 2
 
-# Open links in the background
-defaults write com.twitter.twitter-mac openLinksInBackground -bool true
+# Image Thumbnails: Small
+# defaults write com.tapbots.TweetbotMac statusViewImageType -int 1
 
-# Allow closing the ‘new tweet’ window by pressing `Esc`
-defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
-
-# Show full names rather than Twitter handles
-defaults write com.twitter.twitter-mac ShowFullNames -bool true
-
-# Hide the app in the background if it’s not the front-most window
-defaults write com.twitter.twitter-mac HideInBackground -bool true
+CFPreferencesAppSynchronize "com.tapbots.TweetbotMac"
 
 ###############################################################################
 # Kill affected applications                                                  #
@@ -691,8 +717,8 @@ defaults write com.twitter.twitter-mac HideInBackground -bool true
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 	"Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
-	"Opera" "Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
-	"Transmission" "Twitter" "iCal"; do
+	"Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
+	"Tweetbot" "iCal"; do
 	killall "${app}" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
