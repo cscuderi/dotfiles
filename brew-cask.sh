@@ -8,10 +8,13 @@ echo "Installing essential apps..."
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
+
+# Important stufff
+brew cask install java
 brew install git
 brew install node
 brew install yarn
-brew cask install java
+brew install diff-so-fancy
 
 # Frequently used apps
 echo "Installing frequently used apps..."
