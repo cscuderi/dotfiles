@@ -4,22 +4,19 @@
 # `brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup`
 
 # Install native apps
-echo "Installing native apps..."
+echo "Installing essential apps..."
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
-# Important stuff
 brew install git
+brew install node
 
 # Frequently used apps
 echo "Installing frequently used apps..."
-brew cask install spectacle                                    # Window manager
 brew cask install dropbox                                      # File syncing
 brew cask install google-drive                                 # File syncing
-brew cask install gyazo                                        # Screenshot/gifs
 brew cask install onepassword                                  # Password manager
-brew cask install flux                                         # Blue light manager
 
 # Dev apps
 echo "Installing dev apps..."
@@ -36,6 +33,9 @@ brew cask install dash                                         # Dev documentati
 
 # Productivity
 echo "Installing productivity apps..."
+brew cask install gyazo                                        # Screenshot/gifs
+brew cask install licecap                                      # High performance gif maker
+brew cask install spectacle                                    # Window manager
 brew cask install slack                                        # Chat app
 brew cask install alfred                                       # App launcher
 brew cask install bartender                                    # Menu bar icon management
@@ -57,8 +57,16 @@ echo "Installing a few more apps..."
 brew cask install disk-inventory-x                             # Find big junk files on your HDD
 brew cask install vlc                                          # Plays any video/media
 brew cask install google-play-music-desktop-player             # Music streaming service
-brew cask install licecap                                      # High performance gif maker
 brew cask install sketch                                       # Graphic editor
+brew cask install flux                                         # Blue light manager
+
+# Fonts
+echo "Installing fonts..."
+brew tap caskroom/fonts
+brew cask install font-inconsolata
+brew cask install font-hack
+brew cask install font-source-code-pro-for-powerline
+brew cask install font-space-mono
 
 # Cleanup
 echo "Cleaning up"
