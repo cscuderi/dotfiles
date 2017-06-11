@@ -12,10 +12,9 @@ Install [Dotfiles Syntax Highlighting](https://github.com/mattbanks/dotfiles-syn
 
 ### Installation
 
-* Clone/download this repo locally (anywhere)
-* Run parts of `setup-a-new-machine.sh`
-* Run `symlink-setup.sh`
-  * git config needs attention, read the notes.
+1. Clone/download this repo locally (anywhere)
+1. Run parts of `setup-a-new-machine.sh`
+1. Run `symlink-setup.sh`
 
 ## Moving around in folders (`z`, `...`, `cdf`)
 
