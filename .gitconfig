@@ -4,7 +4,8 @@
 
 [alias]
 	s = status -s
-	c = commit -am
+	c = commit -m
+	a = add .
 	up = pull
 	p = push
 	sclone = clone --depth=1
