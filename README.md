@@ -12,7 +12,7 @@ Install [Dotfiles Syntax Highlighting](https://github.com/mattbanks/dotfiles-syn
 
 ### Installation
 
-* Clone this repo locally
+* Clone/download this repo locally (anywhere)
 * Run parts of `setup-a-new-machine.sh`
 * Run `symlink-setup.sh`
   * git config needs attention, read the notes.
