@@ -22,7 +22,7 @@
 	ui = true
 
 [core]
-	excludesfile = ~/Google\\ Drive/Apps/Git/.gitignore_global
+	excludesfile = /Users/carlin/.gitignore
 	attributesfile = ~/.gitattributes
 	pager = diff-highlight | diff-so-fancy | less -r
 	autocrlf = input
