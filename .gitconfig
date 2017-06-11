@@ -1,8 +1,12 @@
+[user]
+	name = Carlin Scuderi
+	email = carlinscuderi@gmail.com
+
 [alias]
+	s = status -s
 	c = commit -am
 	up = pull
 	p = push
-	s = status -s
 	sclone = clone --depth=1
 	df = diff --color --color-words --abbrev
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
@@ -21,10 +25,12 @@
 	attributesfile = ~/.gitattributes
 	pager = diff-highlight | diff-so-fancy | less -r
 	autocrlf = input
+
 [color "branch"]
 	current = yellow reverse
 	local = yellow
 	remote = green
+
 [color "diff"]
 	meta = yellow bold
 	commit = green bold
@@ -32,13 +38,14 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+
 [color "status"]
 	added = yellow
 	changed = green
 	untracked = cyan
+
 [merge]
 	tool = opendiff
-
 
 [color "diff-highlight"]
 	oldNormal = red bold
@@ -46,13 +53,14 @@
 	newNormal = "green bold"
 	newHighlight = "green bold 22"
 
-# rewrites
+# Rewrites
 [url "git@github.com:"]
 	insteadOf = "gh:"
 	insteadOf = "git://github.com"
 	pushInsteadOf = "github:"
 	pushInsteadOf = "git://github.com/"
 	pushInsteadOf = "https://github.com/"
+
 [url "git@gist.github.com:"]
 	insteadOf = "gst:"
 	pushInsteadOf = "gist:"
@@ -63,24 +71,24 @@
 # Any GitHub repo with my username should be checked out r/w by default
 # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
 
-[url "git@github.com:paulirish/"]
-	insteadOf = "git://github.com/paulirish/"
+[url "git@github.com:carlinscuderi/"]
+	insteadOf = "git://github.com/carlinscuderi/"
 [help]
 	autocorrect = 1
 
-# push easily. http://stackoverflow.com/a/23918418/89484
+# Push easily
+# http://stackoverflow.com/a/23918418/89484
 [push]
 	default = current
 
 [include]
 	# For username / github token / etc
 	path = ~/.gitconfig.local
+
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+
 [init]
 	templatedir = ~/.git_template
-[user]
-	email = carlinscuderi@gmail.com
-	name = Carlin Scuderi
