@@ -35,6 +35,7 @@ brew cask install kitematic                                    # GUI for Docker
 brew cask install dash                                         # Dev documentation
 brew cask install postman                                      # Test APIs
 brew cask install maven                                        # Java build automation
+brew cask install tunnelblick                                  # VPN
 
 # Productivity
 echo "Installing productivity apps..."
