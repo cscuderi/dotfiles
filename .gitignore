@@ -2,6 +2,7 @@
 .vim/viminfo
 .vim/swaps/*
 .vim/undo
+package-lock.json
 
 # Git credential file
 .gitconfig.local
