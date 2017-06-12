@@ -34,6 +34,7 @@ brew cask install docker                                       # Software contai
 brew cask install kitematic                                    # GUI for Docker
 brew cask install dash                                         # Dev documentation
 brew cask install postman                                      # Test APIs
+brew cask install maven                                        # Java build automation
 
 # Productivity
 echo "Installing productivity apps..."
