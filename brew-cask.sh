@@ -42,6 +42,7 @@ brew cask install gyazo                                        # Screenshot/gifs
 brew cask install licecap                                      # High performance gif maker
 brew cask install spectacle                                    # Window manager
 brew cask install slack                                        # Chat app
+brew cask install discord                                      # Gaming chat app
 brew cask install alfred                                       # App launcher
 brew cask install bartender                                    # Menu bar icon management
 brew cask install transmit                                     # FTP
