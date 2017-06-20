@@ -729,6 +729,12 @@ pbcopy < ~/.ssh/id_rsa.pub
 
 echo "Ready to paste SSH public key into Bitbucket/Github"
 
+###############################################################################
+# Sublime Text                                                                #
+###############################################################################
+
+# Copy custom snippets over to Sublime folder
+cp -R ./snippets $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 
 ###############################################################################
 # Kill affected applications                                                  #
