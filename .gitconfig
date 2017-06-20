@@ -3,9 +3,11 @@
 	email = carlinscuderi@gmail.com
 
 [alias]
+	r =
 	s = status -s
-	c = commit -m
 	a = add .
+	c = commit -am
+	fpush = push --force
 	up = pull
 	p = push
 	sclone = clone --depth=1
@@ -18,20 +20,13 @@
 
 	reup = rebase-update
 
-[color]
-	ui = true
-
 [core]
-	excludesfile = /Users/carlin/.gitignore
+	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
-	pager = diff-highlight | diff-so-fancy | less -r
-	autocrlf = input
 
-[color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
-
+# Color
+[color]
+	ui = always
 [color "diff"]
 	meta = yellow bold
 	commit = green bold
@@ -39,20 +34,35 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
-
-[color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
-
-[merge]
-	tool = opendiff
-
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = "red bold 52"
 	newNormal = "green bold"
 	newHighlight = "green bold 22"
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+	newHighlight = "green bold 22"
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+# Git mergetool
+[merge]
+	tool = opendiff
+	renameLimit = 0
+
+# Beautiful diffs
+# npm install -g diff-so-fancy
+[pager]
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
 
 # Rewrites
 [url "git@github.com:"]
@@ -68,12 +78,6 @@
 	pushInsteadOf = "git://gist.github.com/"
 	pushInsteadOf = "https://gist.github.com/"
 
-
-# Any GitHub repo with my username should be checked out r/w by default
-# http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
-
-[url "git@github.com:carlinscuderi/"]
-	insteadOf = "git://github.com/carlinscuderi/"
 [help]
 	autocorrect = 1
 
@@ -93,3 +97,6 @@
 
 [init]
 	templatedir = ~/.git_template
+
+[stash]
+	showPatch = true
