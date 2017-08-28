@@ -1,42 +1,38 @@
-# Copy paste this file in bit by bit
-echo "do not run this script in one go. hit ctrl-c NOW"
-read -n 1
-
 # /////////////////////////////////////////////////////////////////////
 # XCode CLI tools
 # /////////////////////////////////////////////////////////////////////
 if ! xcode-select --print-path &> /dev/null; then
 
-		# Prompt to install the XCode CLI tools
-		xcode-select --install &> /dev/null
+  # Prompt to install the XCode CLI tools
+  xcode-select --install &> /dev/null
 
-		# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-		# Wait until the XCode CLI tools are installed
-		until xcode-select --print-path &> /dev/null; do
-			sleep 5
-		done
+  # Wait until the XCode CLI tools are installed
+  until xcode-select --print-path &> /dev/null; do
+    sleep 5
+  done
 
-		print_result $? 'Install XCode Command Line Tools'
+  print_result $? 'Install XCode Command Line Tools'
 
-		# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-		# Point the `xcode-select` developer directory to
-		# the appropriate directory from within `Xcode.app`
-		# https://github.com/alrra/dotfiles/issues/13
+  # Point the `xcode-select` developer directory to
+  # the appropriate directory from within `Xcode.app`
+  # https://github.com/alrra/dotfiles/issues/13
 
-		sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
-		print_result $? 'Make "xcode-select" developer directory point to Xcode'
+  sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+  print_result $? 'Make "xcode-select" developer directory point to Xcode'
 
-		# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-		# Prompt user to agree to the terms of the Xcode license
-		# https://github.com/alrra/dotfiles/issues/10
+  # Prompt user to agree to the terms of the Xcode license
+  # https://github.com/alrra/dotfiles/issues/10
 
-		sudo xcodebuild -license
-		print_result $? 'Agree with the XCode Command Line Tools licence'
+  sudo xcodebuild -license
+  print_result $? 'Agree with the XCode Command Line Tools licence'
 
-	fi
+fi
 # /////////////////////////////////////////////////////////////////////
 
 
@@ -50,7 +46,6 @@ if ! xcode-select --print-path &> /dev/null; then
 # export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 
 # Install all the things
-./brew.sh
 ./brew-cask.sh
 
 # /////////////////////////////////////////////////////////////////////

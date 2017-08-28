@@ -1,19 +1,15 @@
 # Dotfiles
 
-Based off of Paul Irish's dotfiles, these are tweaked for my own use.
+Based off of Paul Irish's dotfiles, these are tweaked for my own personal use. It might be useful for others when setting up a new Mac as well.
 
 You can check his out [here](https://github.com/paulirish/dotfiles).
-
-## Syntax highlighting for these files
-
-Install [Dotfiles Syntax Highlighting](https://github.com/mattbanks/dotfiles-syntax-highlighting-st2) in Sublime via [Package Control](http://wbond.net/sublime_packages/package_control)
 
 ## Setup
 
 ### Installation
 
 1. Clone/download this repo locally (anywhere)
-1. Copy-paste parts of `setup-a-new-machine.sh` (includes `.osx` and `symlink-setup.sh`)
+1. Copy-paste parts of `setup-a-new-machine.sh`, or run the whole thing in Terminal (includes `.osx` and `symlink-setup.sh`)
 
 ## Moving around in folders (`z`, `...`, `cdf`)
 
