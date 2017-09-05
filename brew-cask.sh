@@ -15,6 +15,8 @@ brew install git
 brew install node
 brew install yarn
 brew install diff-so-fancy
+brew install zsh
+brew install maven
 
 # Frequently used apps
 echo "Installing frequently used apps..."
@@ -25,8 +27,7 @@ brew cask install onepassword                                  # Password manage
 # Dev apps
 echo "Installing dev apps..."
 brew cask install iterm2                                       # Great terminal
-brew cask install zsh                                          # Terminal shell
-brew cask install sublime-text                                 # Text editor
+brew cask install visual-studio-code                           # So good
 brew cask install imagealpha                                   # PNG optimizer
 brew cask install imageoptim                                   # Image optimizer
 brew cask install virtualbox                                   # For VM's
@@ -34,7 +35,6 @@ brew cask install docker                                       # Software contai
 brew cask install kitematic                                    # GUI for Docker
 brew cask install dash                                         # Dev documentation
 brew cask install postman                                      # Test APIs
-brew cask install maven                                        # Java build automation
 brew cask install tunnelblick                                  # VPN
 
 # Productivity
