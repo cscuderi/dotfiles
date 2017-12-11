@@ -92,3 +92,6 @@ alias update_brew_npm_gem='brew_update; npm install npm -g; npm update -g; sudo 
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	alias "$method"="lwp-request -m '$method'"
 done
+
+# Start Adobe Experience Manager
+alias start-aem="java -Xms2048M -Xmx2048M -XX:MaxPermSize=512M -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8765 -jar aem-quickstart-6.2.0.jar -v -r author,dev"
