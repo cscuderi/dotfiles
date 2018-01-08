@@ -1,7 +1,0 @@
-<snippet>
-	<content>
-<![CDATA[active="{Boolean}true"]]>
-	</content>
-	<tabTrigger>active</tabTrigger>
-	<scope>text.xml</scope>
-</snippet>

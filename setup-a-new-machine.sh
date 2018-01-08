@@ -83,9 +83,6 @@ chsh -s $BASHPATH
 echo $BASH_VERSION
 # Later, confirm iterm settings aren't conflicting.
 
-# Setting up the sublime symlink
-ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
-
 # /////////////////////////////////////////////////////////////////////
 
 
