@@ -8,10 +8,10 @@ You can check his out [here](https://github.com/paulirish/dotfiles).
 
 ### Installation
 
-1. Clone/download this repo locally (anywhere)
-1. Copy-paste parts of `setup-a-new-machine.sh`, or run the whole thing in Terminal (includes `.osx` and `symlink-setup.sh`)
+1. Clone/download this repo locally (anywhere) and change to that directory
+1. Type `./setup-a-new-machine.sh` in Terminal (includes `.osx` and `symlink-setup.sh`), or copy and paste parts of it into Terminal
 
-### Manually run
+### Core files and what they do
 
 * `setup-a-new-machine.sh` - XCode, Homebrew, other useful things
 * `symlink-setup.sh` - Sets up symlinks for all dotfiles and vim config
