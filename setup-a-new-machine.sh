@@ -135,9 +135,11 @@ esac
 # http://stackoverflow.com/a/13615531/89484
 # Now, .gitconfig can be shared across all machines and only the .local changes
 
+./symlink-setup.sh
+
 case $additional in
-  y|Y)
-    ./symlink-setup.sh
+  n|N)
+    rm ~/.gitconfig
   ;;
 esac
 
