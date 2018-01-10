@@ -1,4 +1,9 @@
 # /////////////////////////////////////////////////////////////////////
+# Prompt for express install
+# /////////////////////////////////////////////////////////////////////
+read -n1 -p "\nYou can install extras just the required items. Do you want to install extras? y / n " additional
+
+# /////////////////////////////////////////////////////////////////////
 # XCode CLI tools
 # /////////////////////////////////////////////////////////////////////
 if ! xcode-select --print-path &> /dev/null; then
@@ -48,6 +53,15 @@ fi
 # Install all the things
 ./brew-cask.sh
 
+# Install additional apps
+case $additional in
+  y|Y)
+    ./brew-cask+.sh
+  ;;
+esac
+
+
+
 # /////////////////////////////////////////////////////////////////////
 
 
@@ -55,33 +69,38 @@ fi
 # /////////////////////////////////////////////////////////////////////
 # Install other common things
 # /////////////////////////////////////////////////////////////////////
+case $additional in
+  y|Y)
+    # github.com/jamiew/git-friendly
+    # the `push` command which copies the github compare URL to my clipboard is heaven
+    # bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
 
-# github.com/jamiew/git-friendly
-# the `push` command which copies the github compare URL to my clipboard is heaven
-# bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
+    # Type `git open` to open the GitHub page or website for a repository.
+    npm install -g git-open
 
-# Type `git open` to open the GitHub page or website for a repository.
-npm install -g git-open
+    # Trash as the safe `rm` alternative
+    npm install --global trash-cli
 
-# Trash as the safe `rm` alternative
-npm install --global trash-cli
+    # Z
+    # github.com/rupa/z
+    git clone https://github.com/rupa/z.git ~/code/z
+    chmod +x ~/code/z/z.sh
+    # Consider reusing your current .z file if possible
+    # z is hooked up in .bash_profile
 
-# Z
-# github.com/rupa/z
-git clone https://github.com/rupa/z.git ~/code/z
-chmod +x ~/code/z/z.sh
-# Consider reusing your current .z file if possible
-# z is hooked up in .bash_profile
+    # For the c alias (syntax highlighted cat)
+    sudo easy_install Pygments
 
-# For the c alias (syntax highlighted cat)
-sudo easy_install Pygments
+    # Change to bash 4 (installed by homebrew)
+    BASHPATH=$(brew --prefix)/bin/bash
+    sudo echo $BASHPATH >> /etc/shells
+    chsh -s $BASHPATH
+    echo $BASH_VERSION
+    # Later, confirm iterm settings aren't conflicting.
+  ;;
+esac
 
-# Change to bash 4 (installed by homebrew)
-BASHPATH=$(brew --prefix)/bin/bash
-sudo echo $BASHPATH >> /etc/shells
-chsh -s $BASHPATH
-echo $BASH_VERSION
-# Later, confirm iterm settings aren't conflicting.
+
 
 # /////////////////////////////////////////////////////////////////////
 
@@ -97,7 +116,12 @@ echo $BASH_VERSION
 
 # Set up osx defaults
 # Might be more: https://github.com/hjuutilainen/dotfiles/blob/master/bin/osx-user-defaults.sh
-sh .osx
+
+case $additional in
+  y|Y)
+    sh .osx
+  ;;
+esac
 
 # /////////////////////////////////////////////////////////////////////
 
@@ -111,6 +135,13 @@ sh .osx
 # http://stackoverflow.com/a/13615531/89484
 # Now, .gitconfig can be shared across all machines and only the .local changes
 
-./symlink-setup.sh
+case $additional in
+  y|Y)
+    ./symlink-setup.sh
+  ;;
+esac
 
 # /////////////////////////////////////////////////////////////////////
+# Completion
+echo "\n================================================================\n\nDone! You should restart your computer now.\n\n================================================================";;
+say "All done!"
