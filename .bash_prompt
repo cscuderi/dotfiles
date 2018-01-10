@@ -1,5 +1,4 @@
 # This prompt inspired by gf3, sindresorhus, alrra, and mathiasbynens.
-default_username='carlinscuderi'
 
 if [[ -n "$ZSH_VERSION" ]]; then  # quit now if in zsh
 		return 1 2> /dev/null || exit 1;
