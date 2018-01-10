@@ -1,7 +1,9 @@
 # /////////////////////////////////////////////////////////////////////
 # Prompt for express install
 # /////////////////////////////////////////////////////////////////////
-read -n1 -p "\nYou can install extras just the required items. Do you want to install extras? y / n " additional
+read -n1 -p "\nYou can install extras or just the required items. Do you want to install extras? y / n " additional
+
+read -n1 -p "\nDo you want additional Mac customization (theming, ? y / n " macconfigs
 
 # /////////////////////////////////////////////////////////////////////
 # XCode CLI tools
@@ -50,10 +52,10 @@ fi
 # mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
 # export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 
-# Install all the things
+# Install just required dev items
 ./brew-cask.sh
 
-# Install additional apps
+# Install additional dev items
 case $additional in
   y|Y)
     ./brew-cask+.sh
@@ -117,7 +119,7 @@ esac
 # Set up osx defaults
 # Might be more: https://github.com/hjuutilainen/dotfiles/blob/master/bin/osx-user-defaults.sh
 
-case $additional in
+case $macconfigs in
   y|Y)
     sh .osx
   ;;
