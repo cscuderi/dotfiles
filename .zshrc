@@ -119,3 +119,4 @@ function ram() {
     fi
   fi
 }
+alias aem='cd /Applications/Adobe\ Experience\ Manager && java -Xms2048M -Xmx2048M -XX:MaxPermSize=512M -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8765 -jar aem-quickstart-6.2.0.jar -v -r author,dev'
