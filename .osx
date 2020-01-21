@@ -754,19 +754,20 @@ defaults write com.tapbots.TweetbotMac soundType -int 2
 ###############################################################################
 
 # Will prompt you for a phrase
-ssh-keygen
+# Will usually run this manually
+# ssh-keygen
 
 # Copy to clipboard
-pbcopy < ~/.ssh/id_rsa.pub
+# pbcopy < ~/.ssh/id_rsa.pub
 
-echo "Ready to paste SSH public key into Bitbucket/Github"
+# echo "Ready to paste SSH public key into Bitbucket/Github"
 
 ###############################################################################
 # VSCode                                                                      #
 ###############################################################################
 
 # Copy custom snippets over to VSCode folder
-cp -R ./settings.json $HOME/Library/Application\ Support/Code/User
+# cp -R ./settings.json $HOME/Library/Application\ Support/Code/User
 
 ###############################################################################
 # Kill affected applications                                                  #
