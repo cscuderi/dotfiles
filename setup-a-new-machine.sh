@@ -52,15 +52,15 @@ fi
 # mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
 # export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 
-# Install just required dev items
+# Install just required dev items and other items
 ./brew-cask.sh
 
 # Install additional dev items
-case $additional in
-  y|Y)
-    ./brew-cask+.sh
-  ;;
-esac
+# case $additional in
+#   y|Y)
+#     ./brew-cask+.sh
+#   ;;
+# esac
 
 
 

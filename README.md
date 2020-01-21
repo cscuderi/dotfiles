@@ -13,7 +13,7 @@ You can check his out [here](https://github.com/paulirish/dotfiles).
 
 ### Core files and what they do
 
-* `setup-a-new-machine.sh` - XCode, Homebrew, other useful things
+* `setup-a-new-machine.sh` - XCode, Homebrew, does everything
 * `symlink-setup.sh` - Sets up symlinks for all dotfiles and vim config
 * `.osx` - Run on a fresh OS X setup
-* `brew.sh` & `brew-cask.sh` - Homebrew initialization
+* `brew-cask.sh` - Homebrew initialization
