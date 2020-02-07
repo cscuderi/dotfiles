@@ -85,3 +85,6 @@ shopt -s nocaseglob;
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
+
+# Added by Nix installer
+if [ -e /Users/carlinscuderi/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/carlinscuderi/.nix-profile/etc/profile.d/nix.sh; fi
