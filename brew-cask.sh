@@ -17,6 +17,7 @@ brew install maven
 brew install node
 brew install yarn
 brew install zsh
+brew install github/gh/gh
 
 # Dev apps
 echo "Installing dev apps..."
